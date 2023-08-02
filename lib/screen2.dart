@@ -116,7 +116,7 @@ class _Screen2State extends State<Screen2> {
               PlaylistHeader(
                 playlist: widget.playlist,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               _PlaylistButtons(
