@@ -9,8 +9,6 @@ class Screen3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final selected = context.watch<CurrentTrackModel>().selected;
-    if (selected == null) return const SizedBox.shrink();
     return Container(
         height: MediaQuery.of(context).size.height * 0.1,
         color: const Color.fromARGB(255, 15, 15, 15),
