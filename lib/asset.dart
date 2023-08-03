@@ -111,7 +111,7 @@ const lofiHipHopPlaylist = Playlist(
     name: 'Lofi hip hop music - beats to relax/study to',
     imageURL: 'lib/Pictures/lofi_boy.jpeg',
     creator: 'Lofi Boy',
-    description: 'Long Text',
+    description: 'Sleep -> Study -> Eat -> Repeat',
     duration: '28 min',
     followers: '2,654',
     songs: lofiHipHopMusic);

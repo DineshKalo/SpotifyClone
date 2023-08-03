@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spotifyclone/asset.dart';
 import 'package:spotifyclone/wid.dart';
+// ignore: depend_on_referenced_packages
 import 'package:provider/provider.dart';
 
 class Screen3 extends StatelessWidget {
@@ -8,14 +9,20 @@ class Screen3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final selected = context.watch<CurrentTrackModel>().selected;
+    if (selected == null) return const SizedBox.shrink();
     return Container(
         height: MediaQuery.of(context).size.height * 0.1,
-        color: Color.fromARGB(255, 15, 15, 15),
-        child: Padding(
-          padding: EdgeInsets.all(12),
+        color: const Color.fromARGB(255, 15, 15, 15),
+        child: const Padding(
+          padding: EdgeInsets.all(8),
           child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [Trackinfo(), PlayerControls(), MoreOptions()]),
+              children: [
+                SizedBox(width: 260, child: Trackinfo()),
+                PlayerControls(),
+                MoreOptions()
+              ]),
         ));
   }
 }
@@ -46,7 +53,7 @@ class Trackinfo extends StatelessWidget {
               selected.title,
               style: f4.copyWith(fontSize: 16),
             ),
-            SizedBox(
+            const SizedBox(
               height: 4,
             ),
             Text(
@@ -57,8 +64,8 @@ class Trackinfo extends StatelessWidget {
         ),
         IconButton(
             onPressed: () {},
-            icon: Icon(
-              Icons.heart_broken,
+            icon: const Icon(
+              Icons.favorite_border_outlined,
               color: Colors.white,
             ))
       ],
@@ -122,9 +129,6 @@ class PlayerControls extends StatelessWidget {
               padding: EdgeInsets.only(),
             ),
           ],
-        ),
-        SizedBox(
-          height: 4,
         ),
         Row(
           children: [

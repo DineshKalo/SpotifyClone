@@ -13,7 +13,7 @@ class _Screen1State extends State<Screen1> {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.topLeft,
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+      padding: const EdgeInsets.only(left: 10, top: 30, bottom: 10),
       width: MediaQuery.of(context).size.width * 0.20,
       decoration: const BoxDecoration(color: Colors.black),
       child: Column(
@@ -88,24 +88,37 @@ class Libraryplaylist extends StatefulWidget {
 }
 
 class _LibraryplaylistState extends State<Libraryplaylist> {
-  final ScrollController scrollController = ScrollController();
+  ScrollController? _scrollController;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+  }
+
+  @override
+  void dispose() {
+    _scrollController?.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Scrollbar(
+        // ignore: deprecated_member_use
         isAlwaysShown: true,
-        thickness: 12,
-        controller: scrollController,
+        thickness: 8,
+        controller: _scrollController,
         child: ListView(
-          controller: scrollController,
+          controller: _scrollController,
           physics: const ClampingScrollPhysics(),
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Padding(
-                  padding: EdgeInsets.only(left: 14, bottom: 8),
+                  padding: EdgeInsets.only(left: 14, bottom: 3),
                   child: Text(
                     'YOUR LIBRARY',
                     style: f4,
@@ -124,7 +137,7 @@ class _LibraryplaylistState extends State<Libraryplaylist> {
                     .toList(),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Column(

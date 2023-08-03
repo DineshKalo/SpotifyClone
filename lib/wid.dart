@@ -53,7 +53,7 @@ class PlaylistHeader extends StatelessWidget {
           width: 200,
           fit: BoxFit.cover,
         ),
-        SizedBox(
+        const SizedBox(
           width: 16,
         ),
         Expanded(
@@ -64,21 +64,21 @@ class PlaylistHeader extends StatelessWidget {
               'PLAYLIST',
               style: f4.copyWith(fontSize: 12),
             ),
-            SizedBox(
+            const SizedBox(
               height: 12,
             ),
             Text(
               playlist.name,
               style: f3.copyWith(fontSize: 40),
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             Text(
               playlist.description,
               style: f1,
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             Text(

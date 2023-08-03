@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:flutter/material.dart';
 import 'wid.dart';
 import 'asset.dart';
@@ -31,11 +33,11 @@ class _Screen2State extends State<Screen2> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.white10,
+        backgroundColor: Colors.transparent,
         elevation: 0,
         leadingWidth: 140,
         leading: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -43,26 +45,26 @@ class _Screen2State extends State<Screen2> {
                 customBorder: const CircleBorder(),
                 onTap: () {},
                 child: Container(
-                  padding: EdgeInsets.all(6),
-                  decoration: BoxDecoration(
+                  padding: const EdgeInsets.all(6),
+                  decoration: const BoxDecoration(
                       color: Colors.black26, shape: BoxShape.circle),
-                  child: Icon(
+                  child: const Icon(
                     Icons.chevron_left,
                     size: 23,
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               InkWell(
                 customBorder: const CircleBorder(),
                 onTap: () {},
                 child: Container(
-                  padding: EdgeInsets.all(6),
-                  decoration: BoxDecoration(
+                  padding: const EdgeInsets.all(6),
+                  decoration: const BoxDecoration(
                       color: Colors.black26, shape: BoxShape.circle),
-                  child: Icon(
+                  child: const Icon(
                     Icons.chevron_right,
                     size: 23,
                   ),
@@ -75,38 +77,38 @@ class _Screen2State extends State<Screen2> {
           TextButton.icon(
               style: TextButton.styleFrom(foregroundColor: Colors.white),
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.account_circle_outlined,
                 size: 30,
               ),
-              label: Text(
+              label: const Text(
                 'Dinesh',
               )),
-          SizedBox(
+          const SizedBox(
             width: 8,
           ),
           IconButton(
-              padding: EdgeInsets.only(),
+              padding: const EdgeInsets.only(),
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.keyboard_arrow_down,
                 size: 30,
               )),
-          SizedBox(
+          const SizedBox(
             width: 16,
           )
         ],
       ),
       body: Container(
-        width: MediaQuery.of(context).size.width * 0.80,
-        decoration: BoxDecoration(
+        // width: MediaQuery.of(context).size.width * 0.80,
+        decoration: const BoxDecoration(
             gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [Color.fromARGB(255, 86, 255, 80), Colors.black],
                 stops: [0, 0.6])),
         child: Scrollbar(
-          isAlwaysShown: true,
+          thumbVisibility: true,
           controller: _scrollController,
           thickness: 10,
           child: ListView(
